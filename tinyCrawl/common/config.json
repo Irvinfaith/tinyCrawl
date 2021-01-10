@@ -1,5 +1,5 @@
 {
-	"log_path": "./",
+	"log_path": "./log",
 	"is_save_log": false,
 	"checkpoint_dir_path": "./"
 }

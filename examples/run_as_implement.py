@@ -30,6 +30,7 @@ class Scratch(BaseCrawl):
         for _ in d:
             tmp.append(_)
         time.sleep(3)
+
     def sink(self):
         print(self.out)
 

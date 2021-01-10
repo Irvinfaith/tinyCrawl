@@ -1,5 +1,5 @@
 {
-	"log_path": "D:/test",
-	"is_save_log": true,
+	"log_path": "./",
+	"is_save_log": false,
 	"checkpoint_dir_path": "./"
 }

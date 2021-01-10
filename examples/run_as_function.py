@@ -17,10 +17,5 @@ def task(url):
         tmp.append(_)
     time.sleep(3)
 
-bc = BaseCrawl("D:/tmp/%s.txt", range(1, 5), 3)
-from tinyCrawl.common.config import Config
-config = Config()
-config.set("log_path", "D:/test")
-config.set("is_save_log", True)
-
+bc = BaseCrawl("./test_files/%s.txt", range(1, 5), 3)
 bc.run(task)

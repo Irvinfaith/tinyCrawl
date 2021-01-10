@@ -24,5 +24,5 @@ class Scratch(BaseCrawl):
         print(self.out)
 
 def test_implement():
-    mc = Scratch("../examples/test_files/%s.txt", range(1, 5), 1)
+    mc = Scratch("./examples/test_files/%s.txt", range(1, 5), 1)
     mc.main()

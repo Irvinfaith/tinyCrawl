@@ -15,5 +15,5 @@ def test_function():
             d = [i.strip() for i in f.readlines()]
         for _ in d:
             tmp.append(_)
-    bc = BaseCrawl("../examples/test_files/%s.txt", range(1, 5), 1)
+    bc = BaseCrawl("./examples/test_files/%s.txt", range(1, 5), 1)
     bc.run(task)

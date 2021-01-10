@@ -1,12 +1,21 @@
+[![PyPI version](https://badge.fury.io/py/tinyCrawl.svg)](https://badge.fury.io/py/tinyCrawl)
+[![Build Status](https://travis-ci.com/Irvinfaith/tinyCrawl.svg?branch=master)](https://travis-ci.com/Irvinfaith/tinyCrawl)
+[![Documentation Status](https://readthedocs.org/projects/tinycrawl-irvinfaith/badge/?version=latest)](https://tinycrawl-irvinfaith.readthedocs.io/zh_CN/latest/?badge=latest)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tinyCrawl)
+![GitHub](https://img.shields.io/github/license/irvinfaith/tinyCrawl)
+
 # Overview 概览
 
 tinyCrawl 是一个微型的爬虫框架，具有以下特点：
 
 - 简单轻巧，没有任何第三包的依赖
-
 - checkpoint断点续爬
 - 可多线程执行
 - 使用简单
+
+# Documentation 文档
+
+[访问官方文档](https://tinycrawl-irvinfaith.readthedocs.io/zh_CN/latest/)
 
 # Installation 安装
 

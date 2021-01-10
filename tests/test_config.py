@@ -10,6 +10,12 @@ import json
 
 from tinyCrawl import Config
 
+with open("../tinyCrawl/common/config.json", "w") as w:
+    json.dump({
+        "log_path": "./",
+        "is_save_log": False,
+        "checkpoint_dir_path": "./"
+    }, w, ensure_ascii=False, indent="\t")
 
 def test_set_config():
     config = Config()

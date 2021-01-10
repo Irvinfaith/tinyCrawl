@@ -13,8 +13,8 @@ CONFIG_PATH = os.path.realpath(os.path.join(os.path.dirname(__file__), "common",
 if not os.path.exists(CONFIG_PATH):
     with open(CONFIG_PATH, "w") as w:
         json.dump({
-            "log_path": "D:/test",
-            "is_save_log": True,
+            "log_path": "./",
+            "is_save_log": False,
             "checkpoint_dir_path": "./"
         }, w, ensure_ascii=False, indent="\t")
 

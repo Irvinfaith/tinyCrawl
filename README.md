@@ -75,8 +75,8 @@ import pandas as pd
 
 # 需继承BaseCrawl类，覆写crawl和sink方法
 class Scratch(BaseCrawl):
-    def __init__(self, checkpoint_path, iter_url, iter_num_range, multi, thread_num):
-        super().__init__(checkpoint_path, iter_url, iter_num_range, multi, thread_num)
+    def __init__(self, iter_url, iter_num_range, thread_num):
+        super().__init__(iter_url, iter_num_range, thread_num)
 	
     # 覆写crawl方法
     def crawl(self, url):

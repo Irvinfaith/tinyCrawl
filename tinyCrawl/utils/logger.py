@@ -25,8 +25,6 @@ class LogConfig(object):
     def __init__(self, name, level='info'):
         self.log_dir_path = LogConfig.CONFIG['log_path']
         self.is_save_log = LogConfig.CONFIG['is_save_log']
-        print(self.log_dir_path)
-        print(self.is_save_log)
         level_relations = {
             'debug': logging.DEBUG,
             'info': logging.INFO,

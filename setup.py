@@ -6,11 +6,10 @@ Created on 2021/1/10 14:35
 
 @email: Irvinfaith@hotmail.com
 """
-import os
 
 from setuptools import setup, find_packages
 
-with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'README.md'), encoding='utf-8') as f:
+with open('README.md', "r", encoding='utf-8') as f:
     long_description = f.read()
 
 __version__ = '0.1.1'
@@ -19,8 +18,8 @@ setup(
     name="tinyCrawl",
     version=__version__,
     description='Very easy and tiny crawling framework, support multithread processing.',
-    long_description=long_description,
     long_description_content_type='text/markdown',
+    long_description=long_description,
     author='Irvinfaith',
     author_email='waxiguan00@hotmail.com',
     url="https://github.com/Irvinfaith/tinyCrawl",

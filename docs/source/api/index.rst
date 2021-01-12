@@ -6,4 +6,5 @@ API Reference
   :maxdepth: 2
 
   base/index
+  common/index
 

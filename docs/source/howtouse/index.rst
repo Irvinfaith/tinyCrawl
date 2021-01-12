@@ -1,7 +1,8 @@
 
 .. toctree::
-  :caption: 参数说明
+  :caption: 使用说明
   :maxdepth: 2
 
+  howtouse/index
   parameters/index
   config/index

@@ -12,7 +12,7 @@ from setuptools import setup, find_packages
 with open('README.md', "r", encoding='utf-8') as f:
     long_description = f.read()
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 setup(
     name="tinyCrawl",

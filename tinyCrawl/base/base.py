@@ -16,7 +16,6 @@ from concurrent.futures.thread import ThreadPoolExecutor
 from tinyCrawl.common.config import Config
 from tinyCrawl.base.base_container import Container
 from tinyCrawl.utils.logger import LogConfig
-from tinyCrawl.utils.utils import is_abs_path
 
 logger = LogConfig(__file__).logger
 CONFIG = Config()
@@ -24,9 +23,17 @@ CONFIG = Config()
 
 class BaseCrawl:
     def __init__(self, iter_url, iter_num_range, thread_num):
+        """
+
+        Args:
+            iter_url(str): Formatted string, usually it is a url like: "http://example.com/?page=%s",
+                        using `%s` to pass the iterable parameter.
+            iter_num_range: Object has iterable property, which means has `__iter__` attribution, exp: list or range
+            thread_num(int): Thread number of the program, set `1` means single-thread, set larger than 1 means multi-thread.
+        """
 
         checkpoint_dir_path = CONFIG["checkpoint_dir_path"]
-        self.checkpoint_path = os.path.join(os.path.realpath(checkpoint_dir_path), 'breakpoint_page.txt')
+        self.checkpoint_path = os.path.join(os.path.realpath(checkpoint_dir_path), 'checkpoint.txt')
         logger.info("Checkpoint path: " + self.checkpoint_path)
         log_path = CONFIG["log_path"]
         is_save_log = CONFIG["is_save_log"]
@@ -102,9 +109,9 @@ class BaseCrawl:
         if flush:
             self.__source(self.iter_url, self.iter_num_range)
         else:
-            breakpoint_page = int(self.__checkpoint(method='r')[1])
-            logger.info("Found checkpoint: iteration start from %d" % breakpoint_page)
-            self.__source(self.iter_url, range(breakpoint_page, self.iter_num_range.stop, self.iter_num_range.step))
+            checkpoint = int(self.__checkpoint(method='r')[1])
+            logger.info("Found checkpoint: iteration start from %d" % checkpoint)
+            self.__source(self.iter_url, range(checkpoint, self.iter_num_range.stop, self.iter_num_range.step))
 
     def __add_into_queue(self, iter_url, iter_num_range):
         iter_generater = self.__get_iter(iter_url, iter_num_range)

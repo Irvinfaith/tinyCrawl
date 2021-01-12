@@ -22,7 +22,7 @@ from .base.base import BaseCrawl
 from .base.base_container import Container, RowContainer
 from .common.config import Config
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __all__ = ['BaseCrawl',
            'Container',
            'RowContainer',

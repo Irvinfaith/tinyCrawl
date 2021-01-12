@@ -35,6 +35,23 @@ class Config(dict):
         _reload_all(__import__("tinyCrawl"))
 
     def set(self, key, value):
+        """Set global parameters.
+
+            Now has three parameters could be set.
+
+            - ``checkpoint_dir_path``: Path of checkpoint file
+
+            - ``is_save_log``: Whether to save log files
+
+            - ``log_path``: Path of log files
+
+        Args:
+            key(str): Name of parameter
+            value(str or bool): Value to be set
+
+        Returns:
+
+        """
         self.__setitem__(key, value)
 
 

@@ -8,14 +8,15 @@
 
 tinyCrawl 是一个微型的爬虫框架，具有以下特点：
 
-- 简单轻巧，没有任何第三包的依赖
+- 简单轻巧，没有任何第三方包的依赖
 - checkpoint断点续爬
-- 可多线程执行
+- 支持多线程爬取
+- 内置日志功能
 - 使用简单
 
 # Documentation 文档
 
-[访问官方文档](https://tinycrawl-irvinfaith.readthedocs.io/zh_CN/latest/)
+[访问官方说明文档](https://tinycrawl-irvinfaith.readthedocs.io/zh_CN/latest/)
 
 # Installation 安装
 
@@ -24,15 +25,18 @@ pip install tinyCrawl
 ```
 
 
+# How to use 如何使用
+tinyCrawl 支持2种运行方法
 
-# How to use 使用实例
+- By using funciton 函数式：定义爬虫的方法 task()，实例化 ``BaseCrawl(iter_url, iter_num_range, thread_num)``，调用 ``run`` 方法执行
+- By inheritance 继承式：继承 ``BaseCrawl(iter_url, iter_num_range, thread_num)`` ，重写 ``crawl()`` 和 ``sink()`` 方法，其中 ``crawl()``类似于上一方法中的爬虫方法task()，定义爬取单页的爬虫代码， ``sink()``是将结果输出的方法，最后执行 ``main()`` 方法执行总程序
 
-## By using funciton 使用函数
+
+## By using funciton 函数式
 
 ```python
 # -*- coding: utf-8 -*-
 
-import time
 from tinyCrawl import BaseCrawl, RowContainer
 
 from urllib.request import urlopen
@@ -45,7 +49,7 @@ album_xpath = '//div[@class="album"]/a[1]/text()'
 
 def task(url):
     """
-    通过读取多个文件模拟爬虫程序
+    定义爬取单页的爬虫代码
     	
     """
     # 定义数据存放的容器，容器名字就是最后爬取结果存放字典的self.out的key
@@ -74,10 +78,10 @@ bc.run(task)
 print(bc.out)
 ```
 
-## By inheritance 使用继承
+## By inheritance 继承式
 
 ```python
-import time
+from tinyCrawl import BaseCrawl, RowContainer
 from urllib.request import urlopen
 from lxml import etree
 import pandas as pd

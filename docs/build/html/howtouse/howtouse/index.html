@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to use 如何使用 &mdash; tinyCrawl 0.1 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Main parameters主要参数说明" href="../parameters/index.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> tinyCrawl
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">使用指南</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to use 如何使用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">函数式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">继承式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters/index.html">Main parameters主要参数说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">Configurable parameters 可配置参数说明</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">tinyCrawl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">&lt;no title&gt;</a> &raquo;</li>
+        
+      <li>How to use 如何使用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/howtouse/howtouse/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use">
+<h1>How to use 如何使用<a class="headerlink" href="#how-to-use" title="永久链接至标题">¶</a></h1>
+<p>tinyCrawl 支持2种运行方法</p>
+<ul class="simple">
+<li><p>函数式：定义爬虫的方法 task()，实例化 <code class="docutils literal notranslate"><span class="pre">BaseCrawl(iter_url,</span> <span class="pre">iter_num_range,</span> <span class="pre">thread_num)</span></code> 后，调用其 <code class="docutils literal notranslate"><span class="pre">run</span></code> 方法，以 <code class="docutils literal notranslate"><span class="pre">task对象</span></code> 作为参数执行</p></li>
+<li><p>继承式：继承 <code class="docutils literal notranslate"><span class="pre">BaseCrawl(iter_url,</span> <span class="pre">iter_num_range,</span> <span class="pre">thread_num)</span></code> ，重写 <code class="docutils literal notranslate"><span class="pre">crawl()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">sink()</span></code> 方法，其中 <code class="docutils literal notranslate"><span class="pre">crawl()</span></code> 类似于上一方法中的爬虫方法task()，定义爬取单页的爬虫代码， <code class="docutils literal notranslate"><span class="pre">sink()</span></code> 是将结果输出的方法，最后执行 <code class="docutils literal notranslate"><span class="pre">main()</span></code> 方法执行总程序</p></li>
+</ul>
+<div class="section" id="id1">
+<h2>函数式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tinyCrawl</span> <span class="kn">import</span> <span class="n">BaseCrawl</span><span class="p">,</span> <span class="n">RowContainer</span>
+
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+
+<span class="c1"># 定义xpath</span>
+<span class="n">song_name_xpath</span> <span class="o">=</span> <span class="s1">&#39;//div[@class=&quot;song-name&quot;]/a/text()&#39;</span>
+<span class="n">singer_xpath</span> <span class="o">=</span> <span class="s1">&#39;//div[@class=&quot;singers&quot;]/a[1]/text()&#39;</span>
+<span class="n">album_xpath</span> <span class="o">=</span> <span class="s1">&#39;//div[@class=&quot;album&quot;]/a[1]/text()&#39;</span>
+
+<span class="k">def</span> <span class="nf">task</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    定义爬取单页的爬虫代码</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 定义数据存放的容器，容器名字就是最后爬取结果存放字典的self.out的key</span>
+    <span class="n">song_name_list</span> <span class="o">=</span> <span class="n">RowContainer</span><span class="p">(</span><span class="s2">&quot;song name&quot;</span><span class="p">)</span>
+    <span class="n">singer_list</span> <span class="o">=</span> <span class="n">RowContainer</span><span class="p">(</span><span class="s2">&quot;singer&quot;</span><span class="p">)</span>
+    <span class="n">album_list</span> <span class="o">=</span> <span class="n">RowContainer</span><span class="p">(</span><span class="s2">&quot;album&quot;</span><span class="p">)</span>
+
+    <span class="n">page</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+    <span class="n">parse</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_song_name</span><span class="p">,</span> <span class="n">_singer</span><span class="p">,</span> <span class="n">_album</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">song_name_xpath</span><span class="p">),</span>
+                                           <span class="n">parse</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">singer_xpath</span><span class="p">),</span>
+                                           <span class="n">parse</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">album_xpath</span><span class="p">)):</span>
+        <span class="c1"># 将数据append进指定容器中</span>
+        <span class="n">song_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_song_name</span><span class="p">))</span>
+        <span class="n">singer_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_singer</span><span class="p">))</span>
+        <span class="n">album_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_album</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># 第一个参数是链接地址，需通过 %s 定义页数等迭代的参数</span>
+    <span class="c1"># 第二个参数是迭代的范围，</span>
+    <span class="c1"># 第三个参数是启用的线程数，大于1就是多线程，等于1就是单线程</span>
+    <span class="n">bc</span> <span class="o">=</span> <span class="n">BaseCrawl</span><span class="p">(</span><span class="s2">&quot;http://example.com/?page=</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># 输入task的对象，开始执行程序</span>
+    <span class="n">bc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+    <span class="c1"># 执行完毕后，通过out属性，获取结果</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bc</span><span class="o">.</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>继承式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tinyCrawl</span> <span class="kn">import</span> <span class="n">BaseCrawl</span><span class="p">,</span> <span class="n">RowContainer</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 需继承BaseCrawl类，覆写crawl和sink方法</span>
+<span class="k">class</span> <span class="nc">Scratch</span><span class="p">(</span><span class="n">BaseCrawl</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iter_url</span><span class="p">,</span> <span class="n">iter_num_range</span><span class="p">,</span> <span class="n">thread_num</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">iter_url</span><span class="p">,</span> <span class="n">iter_num_range</span><span class="p">,</span> <span class="n">thread_num</span><span class="p">)</span>
+
+    <span class="c1"># 覆写crawl方法</span>
+    <span class="k">def</span> <span class="nf">crawl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+    <span class="c1"># 定义数据存放的容器，容器名字就是最后爬取结果存放字典的self.out的key</span>
+    <span class="n">song_name_list</span> <span class="o">=</span> <span class="n">RowContainer</span><span class="p">(</span><span class="s2">&quot;song name&quot;</span><span class="p">)</span>
+    <span class="n">singer_list</span> <span class="o">=</span> <span class="n">RowContainer</span><span class="p">(</span><span class="s2">&quot;singer&quot;</span><span class="p">)</span>
+    <span class="n">album_list</span> <span class="o">=</span> <span class="n">RowContainer</span><span class="p">(</span><span class="s2">&quot;album&quot;</span><span class="p">)</span>
+
+    <span class="n">page</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+    <span class="n">parse</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_song_name</span><span class="p">,</span> <span class="n">_singer</span><span class="p">,</span> <span class="n">_album</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">parse</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">song_name_xpath</span><span class="p">),</span>
+                                           <span class="n">parse</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">singer_xpath</span><span class="p">),</span>
+                                           <span class="n">parse</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">album_xpath</span><span class="p">)):</span>
+        <span class="c1"># 将数据append进指定容器中</span>
+        <span class="n">song_name_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_song_name</span><span class="p">))</span>
+        <span class="n">singer_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_singer</span><span class="p">))</span>
+        <span class="n">album_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_album</span><span class="p">))</span>
+
+    <span class="c1"># 覆写sink方法，将爬取的结果输出</span>
+    <span class="k">def</span> <span class="nf">sink</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># self.out是字典结构的结果，可以直接输入pandas存为dataframe</span>
+        <span class="n">recent_music</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">recent_music</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;D:/tmptest.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">mc</span> <span class="o">=</span> <span class="n">Scratch</span><span class="p">(</span><span class="s2">&quot;http://example.com/?page=</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># 调用main函数执行程序</span>
+    <span class="n">mc</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2021</span>-01-10 <span class="m">16</span>:18:36,944 - base.py - __init__ - <span class="o">[</span>line:30<span class="o">]</span> - INFO: Checkpoint path: D:<span class="se">\b</span>reakpoint_page.txt
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:38,539 - base.py - __source - <span class="o">[</span>line:119<span class="o">]</span> - INFO: Now is running on multithread mode, total thread num is <span class="sb">`</span><span class="m">3</span><span class="sb">`</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:38,539 - base.py - __source - <span class="o">[</span>line:126<span class="o">]</span> - INFO: Total iteration num: <span class="m">4</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:38,541 - base.py - _multi_thread_wrap - <span class="o">[</span>line:59<span class="o">]</span> - INFO: ThreadPoolExecutor-1_0 now is processing: http://example.com/?page<span class="o">=</span><span class="m">1</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:38,541 - base.py - _multi_thread_wrap - <span class="o">[</span>line:59<span class="o">]</span> - INFO: ThreadPoolExecutor-1_1 now is processing: http://example.com/?page<span class="o">=</span><span class="m">2</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:38,542 - base.py - _multi_thread_wrap - <span class="o">[</span>line:59<span class="o">]</span> - INFO: ThreadPoolExecutor-1_2 now is processing: http://example.com/?page<span class="o">=</span><span class="m">3</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:41,544 - base.py - __task_done - <span class="o">[</span>line:115<span class="o">]</span> - INFO: ThreadPoolExecutor-1_1 task finished<span class="p">;</span> <span class="o">(</span>Time took: <span class="m">3</span>.0009s<span class="o">)</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:41,544 - base.py - __task_done - <span class="o">[</span>line:115<span class="o">]</span> - INFO: ThreadPoolExecutor-1_0 task finished<span class="p">;</span> <span class="o">(</span>Time took: <span class="m">3</span>.0019s<span class="o">)</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:41,544 - base.py - __task_done - <span class="o">[</span>line:115<span class="o">]</span> - INFO: ThreadPoolExecutor-1_2 task finished<span class="p">;</span> <span class="o">(</span>Time took: <span class="m">3</span>.0009s<span class="o">)</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:41,545 - base.py - _multi_thread_wrap - <span class="o">[</span>line:59<span class="o">]</span> - INFO: ThreadPoolExecutor-1_1 now is processing: http://example.com/?page<span class="o">=</span><span class="m">4</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:44,551 - base.py - __task_done - <span class="o">[</span>line:115<span class="o">]</span> - INFO: ThreadPoolExecutor-1_1 task finished<span class="p">;</span> <span class="o">(</span>Time took: <span class="m">3</span>.0022s<span class="o">)</span>
+<span class="m">2021</span>-01-10 <span class="m">16</span>:18:44,551 - base.py - __source - <span class="o">[</span>line:151<span class="o">]</span> - INFO: All <span class="k">done</span>. <span class="o">(</span>Time took: <span class="m">6</span>.0102s<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../parameters/index.html" class="btn btn-neutral float-right" title="Main parameters主要参数说明" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2021, Irvinfaith
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

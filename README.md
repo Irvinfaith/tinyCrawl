@@ -1,8 +1,10 @@
-[![PyPI version](https://badge.fury.io/py/tinyCrawl.svg)](https://badge.fury.io/py/tinyCrawl)
+![PyPI](https://img.shields.io/pypi/v/tinyCrawl?color=blue)
 [![Build Status](https://travis-ci.com/Irvinfaith/tinyCrawl.svg?branch=master)](https://travis-ci.com/Irvinfaith/tinyCrawl)
+![Python package](https://github.com/Irvinfaith/tinyCrawl/workflows/Python%20package/badge.svg)
 [![Documentation Status](https://readthedocs.org/projects/tinycrawl-irvinfaith/badge/?version=latest)](https://tinycrawl-irvinfaith.readthedocs.io/zh_CN/latest/?badge=latest)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tinyCrawl)
-![GitHub](https://img.shields.io/github/license/irvinfaith/tinyCrawl)
+![GitHub](https://img.shields.io/github/license/irvinfaith/tinyCrawl?color=yellow)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Irvinfaith/tinyCrawl)
 
 # Overview 概览
 

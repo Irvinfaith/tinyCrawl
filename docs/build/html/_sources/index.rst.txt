@@ -1,15 +1,21 @@
-.. image:: https://badge.fury.io/py/tinyCrawl.svg
-  :target: https://badge.fury.io/py/tinyCrawl
+.. image:: https://img.shields.io/pypi/v/tinyCrawl?color=blue
+  :alt: PyPI
 
 .. image:: https://travis-ci.com/Irvinfaith/tinyCrawl.svg?branch=master
   :target: https://travis-ci.com/Irvinfaith/tinyCrawl
+
+.. image:: https://github.com/Irvinfaith/tinyCrawl/workflows/Python%20package/badge.svg
 
 .. image:: https://readthedocs.org/projects/tinycrawl-irvinfaith/badge/?version=latest
   :target: https://tinycrawl-irvinfaith.readthedocs.io/zh_CN/latest/?badge=latest
 
 .. image:: https://img.shields.io/pypi/pyversions/tinyCrawl
 
-.. image:: https://img.shields.io/github/license/irvinfaith/tinyCrawl
+.. image:: https://img.shields.io/github/license/irvinfaith/tinyCrawl?color=yellow
+  :alt: GitHub
+
+.. image:: https://img.shields.io/github/languages/code-size/Irvinfaith/tinyCrawl
+  :alt: GitHub code size in bytes
 
 ############################
 tinyCrawl Documentation
